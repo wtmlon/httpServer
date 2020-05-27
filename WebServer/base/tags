@@ -1,0 +1,182 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AppendFile	FileUtil.cpp	/^AppendFile::AppendFile(string filename) : fp_(fopen(filename.c_str(), "at")){$/;"	f	class:AppendFile
+AppendFile	FileUtil.h	/^class AppendFile : noncopyable {$/;"	c
+AsyncLogger_	Logging.cpp	/^static AsyncLogging * AsyncLogger_;$/;"	v	file:
+AsyncLogging	AsyncLogging.cpp	/^AsyncLogging::AsyncLogging(string logFileName_, int flushInterval)$/;"	f	class:AsyncLogging
+AsyncLogging	AsyncLogging.h	/^class AsyncLogging : noncopyable {$/;"	c
+Buffer	AsyncLogging.h	/^		typedef FixedBuffer<kLargeBuffer> Buffer;$/;"	t	class:AsyncLogging
+Buffer	LogStream.h	/^  typedef FixedBuffer<kSmallBuffer> Buffer;$/;"	t	class:LogStream
+BufferPtr	AsyncLogging.h	/^		typedef shared_ptr<Buffer> BufferPtr;$/;"	t	class:AsyncLogging
+BufferVector	AsyncLogging.h	/^		typedef vector<shared_ptr<Buffer>> BufferVector;$/;"	t	class:AsyncLogging
+Condition	Condition.h	/^		explicit Condition(MutexLock &_mutex) : mutex(_mutex) {$/;"	f	class:Condition
+Condition	Condition.h	/^class Condition : noncopyable {$/;"	c
+CountDownLatch	CountDownLatch.cpp	/^CountDownLatch::CountDownLatch(int count)$/;"	f	class:CountDownLatch
+CountDownLatch	CountDownLatch.h	/^class CountDownLatch : noncopyable {$/;"	c
+CurrentThread	CurrentThread.h	/^namespace CurrentThread {$/;"	n
+CurrentThread	Thread.cpp	/^namespace CurrentThread {$/;"	n	file:
+FixedBuffer	LogStream.h	/^		FixedBuffer() :cur_(data_) {$/;"	f	class:FixedBuffer
+FixedBuffer	LogStream.h	/^class FixedBuffer : noncopyable {$/;"	c
+Impl	Logging.cpp	/^Logger::Impl::Impl(const char* fileName, int line)$/;"	f	class:Logger::Impl
+Impl	Logging.h	/^		class Impl {$/;"	c	class:Logger
+LOG	Logging.h	48;"	d
+LogFile	LogFile.cpp	/^LogFile::LogFile(const string& basename, int flushEveryN)$/;"	f	class:LogFile
+LogFile	LogFile.h	/^class LogFile : noncopyable {$/;"	c
+LogStream	LogStream.h	/^class LogStream : noncopyable {$/;"	c
+Logger	Logging.cpp	/^Logger::Logger(const char* fileName, int line)$/;"	f	class:Logger
+Logger	Logging.h	/^class Logger {$/;"	c
+MutexLock	MutexLock.h	/^		MutexLock() {$/;"	f	class:MutexLock
+MutexLock	MutexLock.h	/^class MutexLock : noncopyable {$/;"	c
+MutexLockGuard	MutexLock.h	/^		explicit MutexLockGuard(MutexLock &_mutex) : mutex(_mutex) {$/;"	f	class:MutexLockGuard
+MutexLockGuard	MutexLock.h	/^class MutexLockGuard : noncopyable {\/\/construct is initialize principle$/;"	c
+Thread	Thread.cpp	/^Thread::Thread(const ThreadFunc& func, const string& n)$/;"	f	class:Thread
+Thread	Thread.h	/^class Thread : noncopyable {$/;"	c
+ThreadData	Thread.cpp	/^	ThreadData(const ThreadFunc& func, const string& name, pid_t* tid,$/;"	f	struct:ThreadData
+ThreadData	Thread.cpp	/^struct ThreadData {$/;"	s	file:
+ThreadFunc	Thread.cpp	/^	typedef Thread::ThreadFunc ThreadFunc;$/;"	t	struct:ThreadData	file:
+ThreadFunc	Thread.h	/^		typedef std::function<void()> ThreadFunc;$/;"	t	class:Thread
+add	LogStream.h	/^		void add(size_t len){$/;"	f	class:FixedBuffer
+append	AsyncLogging.cpp	/^void AsyncLogging::append(const char* logline, int len) {$/;"	f	class:AsyncLogging
+append	FileUtil.cpp	/^void AppendFile::append(const char* logline, const size_t len) {$/;"	f	class:AppendFile
+append	LogFile.cpp	/^void LogFile::append(const char* logline, int len) {$/;"	f	class:LogFile
+append	LogStream.h	/^		void append(const char* buf, size_t len) {$/;"	f	class:FixedBuffer
+append	LogStream.h	/^  void append(const char* data, int len) { buffer_.append(data, len); }$/;"	f	class:LogStream
+append_unlocked	LogFile.cpp	/^void LogFile::append_unlocked(const char* logline, int len) {$/;"	f	class:LogFile
+avail	LogStream.h	/^		int avail() const {$/;"	f	class:FixedBuffer
+basename_	AsyncLogging.h	/^		string basename_;$/;"	m	class:AsyncLogging
+basename_	LogFile.h	/^		const std::string basename_;$/;"	m	class:LogFile
+basename_	Logging.h	/^				string basename_;$/;"	m	class:Logger::Impl
+buffer	LogStream.h	/^  const Buffer& buffer() const { return buffer_; }$/;"	f	class:LogStream
+buffer_	FileUtil.h	/^		char buffer_[64 * 1024];\/\/64k$/;"	m	class:AppendFile
+buffer_	LogStream.h	/^  Buffer buffer_;$/;"	m	class:LogStream
+buffers_	AsyncLogging.h	/^		BufferVector buffers_;$/;"	m	class:AsyncLogging
+bzero	LogStream.h	/^		void bzero() {$/;"	f	class:FixedBuffer
+cacheTid	Thread.cpp	/^void CurrentThread::cacheTid(){$/;"	f	class:CurrentThread
+cond	Condition.h	/^		pthread_cond_t cond;$/;"	m	class:Condition
+cond_	AsyncLogging.h	/^		Condition cond_;$/;"	m	class:AsyncLogging
+condition_	CountDownLatch.h	/^		Condition condition_;$/;"	m	class:CountDownLatch
+convert	LogStream.cpp	/^size_t convert(char buf[], T value) {$/;"	f
+countDown	CountDownLatch.cpp	/^void CountDownLatch::countDown(){$/;"	f	class:CountDownLatch
+count_	CountDownLatch.h	/^		int count_;$/;"	m	class:CountDownLatch
+count_	LogFile.h	/^		int count_;$/;"	m	class:LogFile
+cur_	LogStream.h	/^		char* cur_;$/;"	m	class:FixedBuffer
+current	LogStream.h	/^		char* current() const {$/;"	f	class:FixedBuffer
+currentBuffer_	AsyncLogging.h	/^		BufferPtr currentBuffer_;$/;"	m	class:AsyncLogging
+data	LogStream.h	/^		const char* data() const {$/;"	f	class:FixedBuffer
+data_	LogStream.h	/^		char data_[SIZE];$/;"	m	class:FixedBuffer
+digits	LogStream.cpp	/^const char digits[] = "9876543210123456789";$/;"	v
+end	LogStream.h	/^		const char* end() const{$/;"	f	class:FixedBuffer
+file_	LogFile.h	/^		std::unique_ptr<AppendFile> file_;$/;"	m	class:LogFile
+flush	FileUtil.cpp	/^void AppendFile::flush() {$/;"	f	class:AppendFile
+flush	LogFile.cpp	/^void LogFile::flush() {$/;"	f	class:LogFile
+flushEveryN_	LogFile.h	/^		const int flushEveryN_;$/;"	m	class:LogFile
+flushInterval_	AsyncLogging.h	/^		const int flushInterval_;$/;"	m	class:AsyncLogging
+formatInteger	LogStream.cpp	/^void LogStream::formatInteger(T v) {$/;"	f	class:LogStream
+formatTime	Logging.cpp	/^void Logger::Impl::formatTime()$/;"	f	class:Logger::Impl
+fp_	FileUtil.h	/^		FILE *fp_;$/;"	m	class:AppendFile
+func_	Thread.cpp	/^	ThreadFunc func_;$/;"	m	struct:ThreadData	file:
+func_	Thread.h	/^		ThreadFunc func_;$/;"	m	class:Thread
+get	MutexLock.h	/^		pthread_mutex_t* get() {$/;"	f	class:MutexLock
+getLogFileName	Logging.h	/^		static string getLogFileName() {$/;"	f	class:Logger
+gettid	Thread.cpp	/^pid_t gettid() {$/;"	f
+impl_	Logging.h	/^		Impl impl_;$/;"	m	class:Logger
+join	Thread.cpp	/^int Thread::join(){$/;"	f	class:Thread
+joined_	Thread.h	/^		bool joined_;$/;"	m	class:Thread
+kLargeBuffer	LogStream.h	/^const int kLargeBuffer = 4000 * 1000;\/\/4mb$/;"	v
+kMaxNumericSize	LogStream.h	/^  static const int kMaxNumericSize = 32;$/;"	m	class:LogStream
+kSmallBuffer	LogStream.h	/^const int kSmallBuffer = 4000;\/\/4kb$/;"	v
+latch_	AsyncLogging.h	/^		CountDownLatch latch_;$/;"	m	class:AsyncLogging
+latch_	Thread.cpp	/^	CountDownLatch* latch_;$/;"	m	struct:ThreadData	file:
+latch_	Thread.h	/^		CountDownLatch latch_;\/\/?$/;"	m	class:Thread
+length	LogStream.h	/^		int length() const {$/;"	f	class:FixedBuffer
+line_	Logging.h	/^				int line_;$/;"	m	class:Logger::Impl
+lock	MutexLock.h	/^		void lock() {$/;"	f	class:MutexLock
+logFileName_	Logging.cpp	/^string Logger::logFileName_ = ".\/WebServer.log";$/;"	m	class:Logger	file:
+logFileName_	Logging.h	/^		static string logFileName_;$/;"	m	class:Logger
+main	LoggingTest.cpp	/^int main()$/;"	f
+mutex	Condition.h	/^		MutexLock &mutex;$/;"	m	class:Condition
+mutex	MutexLock.h	/^		MutexLock &mutex;$/;"	m	class:MutexLockGuard
+mutex	MutexLock.h	/^		pthread_mutex_t mutex;$/;"	m	class:MutexLock
+mutex_	AsyncLogging.h	/^		MutexLock mutex_;$/;"	m	class:AsyncLogging
+mutex_	CountDownLatch.h	/^		mutable MutexLock mutex_;\/\/can be modified by const function$/;"	m	class:CountDownLatch
+mutex_	LogFile.h	/^		std::unique_ptr<MutexLock> mutex_;$/;"	m	class:LogFile
+name	CurrentThread.h	/^	inline const char* name() {$/;"	f	namespace:CurrentThread
+name	Thread.h	/^		const std::string& name() const {$/;"	f	class:Thread
+name_	Thread.cpp	/^	string name_;$/;"	m	struct:ThreadData	file:
+name_	Thread.h	/^		std::string name_;$/;"	m	class:Thread
+nextBuffer_	AsyncLogging.h	/^		BufferPtr nextBuffer_;$/;"	m	class:AsyncLogging
+noncopyable	noncopyable.h	/^		noncopyable() {$/;"	f	class:noncopyable
+noncopyable	noncopyable.h	/^class noncopyable {$/;"	c
+notify	Condition.h	/^		void notify() {$/;"	f	class:Condition
+notifyAll	Condition.h	/^		void notifyAll() {$/;"	f	class:Condition
+once_control_	Logging.cpp	/^static pthread_once_t once_control_ = PTHREAD_ONCE_INIT;$/;"	v	file:
+once_init	Logging.cpp	/^void once_init(){$/;"	f
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(double v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(int v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(long double v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(long long v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(long v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(short v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(unsigned int v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(unsigned long long v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(unsigned long v) {$/;"	f	class:LogStream
+operator <<	LogStream.cpp	/^LogStream& LogStream::operator<<(unsigned short v) {$/;"	f	class:LogStream
+operator <<	LogStream.h	/^  LogStream& operator<<(bool v) {$/;"	f	class:LogStream
+operator <<	LogStream.h	/^  LogStream& operator<<(char v) {$/;"	f	class:LogStream
+operator <<	LogStream.h	/^  LogStream& operator<<(const char* str) {$/;"	f	class:LogStream
+operator <<	LogStream.h	/^  LogStream& operator<<(const std::string& v) {$/;"	f	class:LogStream
+operator <<	LogStream.h	/^  LogStream& operator<<(const unsigned char* str) {$/;"	f	class:LogStream
+operator <<	LogStream.h	/^  LogStream& operator<<(float v) {$/;"	f	class:LogStream
+other	LoggingTest.cpp	/^void other()$/;"	f
+output	Logging.cpp	/^void output(const char* msg, int len)$/;"	f
+pthreadId_	Thread.h	/^		pthread_t pthreadId_;$/;"	m	class:Thread
+reset	LogStream.h	/^		void reset() {$/;"	f	class:FixedBuffer
+resetBuffer	LogStream.h	/^  void resetBuffer() { buffer_.reset(); }$/;"	f	class:LogStream
+runInThread	Thread.cpp	/^	void runInThread() {$/;"	f	struct:ThreadData
+running_	AsyncLogging.h	/^		bool running_;$/;"	m	class:AsyncLogging
+setDefaultName	Thread.cpp	/^void Thread::setDefaultName(){$/;"	f	class:Thread
+setLogFileName	Logging.h	/^		static void setLogFileName(string& fileName){$/;"	f	class:Logger
+start	AsyncLogging.h	/^		void start() {$/;"	f	class:AsyncLogging
+start	Thread.cpp	/^void Thread::start() {$/;"	f	class:Thread
+startThread	Thread.cpp	/^void* startThread(void* obj) {$/;"	f
+started	Thread.h	/^		bool started() const {$/;"	f	class:Thread
+started_	Thread.h	/^		bool started_;$/;"	m	class:Thread
+stop	AsyncLogging.h	/^		void stop() {$/;"	f	class:AsyncLogging
+stream	Logging.h	/^		LogStream& stream() {$/;"	f	class:Logger
+stream_	Logging.h	/^				LogStream stream_;$/;"	m	class:Logger::Impl
+stressing_multi_threads	LoggingTest.cpp	/^void stressing_multi_threads(int threadNum = 4)$/;"	f
+stressing_single_thread	LoggingTest.cpp	/^void stressing_single_thread()$/;"	f
+t_cachedTid	Thread.cpp	/^	__thread int t_cachedTid = 0;\/\/one thread one copy __thread$/;"	m	namespace:CurrentThread	file:
+t_threadName	Thread.cpp	/^	__thread const char* t_threadName = "default";$/;"	m	namespace:CurrentThread	file:
+t_tidString	Thread.cpp	/^	__thread char t_tidString[32];$/;"	m	namespace:CurrentThread	file:
+t_tidStringLength	Thread.cpp	/^	__thread int t_tidStringLength = 6;$/;"	m	namespace:CurrentThread	file:
+threadFunc	AsyncLogging.cpp	/^void AsyncLogging::threadFunc() {$/;"	f	class:AsyncLogging
+threadFunc	LoggingTest.cpp	/^void threadFunc()$/;"	f
+thread_	AsyncLogging.h	/^		Thread thread_;$/;"	m	class:AsyncLogging
+tid	CurrentThread.h	/^	inline int tid(){$/;"	f	namespace:CurrentThread
+tid	Thread.h	/^		pid_t tid() const {$/;"	f	class:Thread
+tidString	CurrentThread.h	/^	inline const char* tidString(){\/\/for logging$/;"	f	namespace:CurrentThread
+tidStringLength	CurrentThread.h	/^	inline int tidStringLength(){$/;"	f	namespace:CurrentThread
+tid_	Thread.cpp	/^	pid_t* tid_;$/;"	m	struct:ThreadData	file:
+tid_	Thread.h	/^		pid_t tid_;$/;"	m	class:Thread
+type_test	LoggingTest.cpp	/^void type_test()$/;"	f
+unlock	MutexLock.h	/^		void unlock() {$/;"	f	class:MutexLock
+wait	Condition.h	/^		void wait() {$/;"	f	class:Condition
+wait	CountDownLatch.cpp	/^void CountDownLatch::wait(){$/;"	f	class:CountDownLatch
+waitForSeconds	Condition.h	/^		bool waitForSeconds(int seconds){$/;"	f	class:Condition
+write	FileUtil.cpp	/^size_t AppendFile::write(const char* logline, size_t len) {$/;"	f	class:AppendFile
+zero	LogStream.cpp	/^const char* zero = digits + 9;$/;"	v
+~AppendFile	FileUtil.cpp	/^AppendFile::~AppendFile(){$/;"	f	class:AppendFile
+~AsyncLogging	AsyncLogging.h	/^		~AsyncLogging() {$/;"	f	class:AsyncLogging
+~Condition	Condition.h	/^		~Condition() {$/;"	f	class:Condition
+~FixedBuffer	LogStream.h	/^		~FixedBuffer(){$/;"	f	class:FixedBuffer
+~LogFile	LogFile.cpp	/^LogFile::~LogFile(){$/;"	f	class:LogFile
+~Logger	Logging.cpp	/^Logger::~Logger()$/;"	f	class:Logger
+~MutexLock	MutexLock.h	/^		~MutexLock() {$/;"	f	class:MutexLock
+~MutexLockGuard	MutexLock.h	/^		~MutexLockGuard() {$/;"	f	class:MutexLockGuard
+~Thread	Thread.cpp	/^Thread::~Thread() {$/;"	f	class:Thread
+~noncopyable	noncopyable.h	/^		~noncopyable() {$/;"	f	class:noncopyable

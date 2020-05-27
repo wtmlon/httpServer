@@ -1,0 +1,416 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ANALYSIS_ERROR	HttpData.h	/^enum AnalysisState { ANALYSIS_SUCCESS = 1, ANALYSIS_ERROR};$/;"	e	enum:AnalysisState
+ANALYSIS_SUCCESS	HttpData.h	/^enum AnalysisState { ANALYSIS_SUCCESS = 1, ANALYSIS_ERROR};$/;"	e	enum:AnalysisState
+AnalysisState	HttpData.h	/^enum AnalysisState { ANALYSIS_SUCCESS = 1, ANALYSIS_ERROR};$/;"	g
+AppendFile	base/FileUtil.cpp	/^AppendFile::AppendFile(string filename) : fp_(fopen(filename.c_str(), "at")){$/;"	f	class:AppendFile
+AppendFile	base/FileUtil.h	/^class AppendFile : noncopyable {$/;"	c
+AsyncLogger_	base/Logging.cpp	/^static AsyncLogging * AsyncLogger_;$/;"	v	file:
+AsyncLogging	base/AsyncLogging.cpp	/^AsyncLogging::AsyncLogging(string logFileName_, int flushInterval)$/;"	f	class:AsyncLogging
+AsyncLogging	base/AsyncLogging.h	/^class AsyncLogging : noncopyable {$/;"	c
+Buffer	base/AsyncLogging.h	/^		typedef FixedBuffer<kLargeBuffer> Buffer;$/;"	t	class:AsyncLogging
+Buffer	base/LogStream.h	/^  typedef FixedBuffer<kSmallBuffer> Buffer;$/;"	t	class:LogStream
+BufferPtr	base/AsyncLogging.h	/^		typedef shared_ptr<Buffer> BufferPtr;$/;"	t	class:AsyncLogging
+BufferVector	base/AsyncLogging.h	/^		typedef vector<shared_ptr<Buffer>> BufferVector;$/;"	t	class:AsyncLogging
+CallBack	Channel.h	/^		typedef std::function<void()> CallBack;$/;"	t	class:Channel
+Channel	Channel.cpp	/^Channel::Channel(EventLoop* loop)$/;"	f	class:Channel
+Channel	Channel.cpp	/^Channel::Channel(EventLoop* loop, int fd)$/;"	f	class:Channel
+Channel	Channel.h	/^class Channel {$/;"	c
+Condition	base/Condition.h	/^		explicit Condition(MutexLock &_mutex) : mutex(_mutex) {$/;"	f	class:Condition
+Condition	base/Condition.h	/^class Condition : noncopyable {$/;"	c
+ConnectionState	HttpData.h	/^enum ConnectionState{H_CONNECTED = 0, H_DISCONNECTING, H_DISCONNECTED};$/;"	g
+CountDownLatch	base/CountDownLatch.cpp	/^CountDownLatch::CountDownLatch(int count)$/;"	f	class:CountDownLatch
+CountDownLatch	base/CountDownLatch.h	/^class CountDownLatch : noncopyable {$/;"	c
+CurrentThread	base/CurrentThread.h	/^namespace CurrentThread {$/;"	n
+CurrentThread	base/Thread.cpp	/^namespace CurrentThread {$/;"	n	file:
+DEFAULT_EVENT	HttpData.cpp	/^cost __uint32_t DEFAULT_EVENT = EPOLLIN | EPOLLET | EPOLLONESHOT;$/;"	v
+DEFAULT_EXPIRED_TIME	HttpData.cpp	/^const int DEFAULT_EXPIRED_TIME = 2000;$/;"	v
+DEFAULT_KEEP_ALIVE_TIME	HttpData.cpp	/^const int DEFAULT_KEEP_ALIVE_TIME = 5*60*1000;$/;"	v
+EPOLLWAIT_TIME	Epoll.cpp	/^const int EPOLLWAIT_TIME = 10000;$/;"	v
+EVENTSNUM	Epoll.cpp	/^const int EVENTSNUM = 4096;$/;"	v
+Epoll	Epoll.cpp	/^Epoll::Epoll() : epollFd_(epoll_create1(EPOLL_CLOEXEC)), events_(EVENTSNUM) {$/;"	f	class:Epoll
+Epoll	Epoll.h	/^class Epoll {$/;"	c
+EqualAndUpdateLastEvents	Channel.h	/^		bool EqualAndUpdateLastEvents() {$/;"	f	class:Channel
+EventLoop	EventLoop.cpp	/^EventLoop::EventLoop()$/;"	f	class:EventLoop
+EventLoop	EventLoop.h	/^class EventLoop {$/;"	c
+EventLoopThread	EventLoopThread.cpp	/^EventLoopThread::EventLoopThread()$/;"	f	class:EventLoopThread
+EventLoopThread	EventLoopThread.h	/^class EventLoopThread : noncopyable {$/;"	c
+EventLoopThreadPool	EventLoopThreadPool.cpp	/^EventLoopThreadPool::EventLoopThreadPool(EventLoop *baseLoop, int numThreads)$/;"	f	class:EventLoopThreadPool
+EventLoopThreadPool	EventLoopThreadPool.h	/^class EventLoopThreadPool : noncopyable {$/;"	c
+FixedBuffer	base/LogStream.h	/^		FixedBuffer() :cur_(data_) {$/;"	f	class:FixedBuffer
+FixedBuffer	base/LogStream.h	/^class FixedBuffer : noncopyable {$/;"	c
+Functor	EventLoop.h	/^		typedef std::function<void()> Functor;$/;"	t	class:EventLoop
+HTTPVersion_	HttpData.h	/^	HttpVersion HTTPVersion_;$/;"	m	class:HttpData
+HTTP_10	HttpData.h	/^enum HttpVersion{ HTTP_10 = 1, HTTP_11};$/;"	e	enum:HttpVersion
+HTTP_11	HttpData.h	/^enum HttpVersion{ HTTP_10 = 1, HTTP_11};$/;"	e	enum:HttpVersion
+H_COLON	HttpData.h	/^	H_COLON,$/;"	e	enum:ParseState
+H_CONNECTED	HttpData.h	/^enum ConnectionState{H_CONNECTED = 0, H_DISCONNECTING, H_DISCONNECTED};$/;"	e	enum:ConnectionState
+H_CR	HttpData.h	/^	H_CR,$/;"	e	enum:ParseState
+H_DISCONNECTED	HttpData.h	/^enum ConnectionState{H_CONNECTED = 0, H_DISCONNECTING, H_DISCONNECTED};$/;"	e	enum:ConnectionState
+H_DISCONNECTING	HttpData.h	/^enum ConnectionState{H_CONNECTED = 0, H_DISCONNECTING, H_DISCONNECTED};$/;"	e	enum:ConnectionState
+H_END_CR	HttpData.h	/^	H_END_CR,$/;"	e	enum:ParseState
+H_END_LF	HttpData.h	/^	H_END_LF$/;"	e	enum:ParseState
+H_KEY	HttpData.h	/^	H_KEY,$/;"	e	enum:ParseState
+H_LF	HttpData.h	/^	H_LF,$/;"	e	enum:ParseState
+H_SPACES_AFTER_COLON	HttpData.h	/^	H_SPACES_AFTER_COLON,$/;"	e	enum:ParseState
+H_START	HttpData.h	/^	H_START = 0,$/;"	e	enum:ParseState
+H_VALUE	HttpData.h	/^	H_VALUE,$/;"	e	enum:ParseState
+HeaderState	HttpData.h	/^enum HeaderState {$/;"	g
+HttpData	HttpData.cpp	/^HttpData::HttpData(EventLoop* loop, int connfd)$/;"	f	class:HttpData
+HttpData	HttpData.h	/^class HttpData : public std::enable_shared_from_this<HttpData> {$/;"	c
+HttpMethod	HttpData.h	/^enum HttpMethod { METHOD_POST = 1, METHOD_GET, METHOD_HEAD};$/;"	g
+HttpVersion	HttpData.h	/^enum HttpVersion{ HTTP_10 = 1, HTTP_11};$/;"	g
+Impl	base/Logging.cpp	/^Logger::Impl::Impl(const char* fileName, int line)$/;"	f	class:Logger::Impl
+Impl	base/Logging.h	/^		class Impl {$/;"	c	class:Logger
+LOG	base/Logging.h	48;"	d
+LogFile	base/LogFile.cpp	/^LogFile::LogFile(const string& basename, int flushEveryN)$/;"	f	class:LogFile
+LogFile	base/LogFile.h	/^class LogFile : noncopyable {$/;"	c
+LogStream	base/LogStream.h	/^class LogStream : noncopyable {$/;"	c
+Logger	base/Logging.h	/^class Logger {$/;"	c
+MAXFDS	Epoll.h	/^		static const int MAXFDS = 100000;$/;"	m	class:Epoll
+MAXFDS	Server.h	/^	static const int MAXFDS = 100000;$/;"	m	class:Server
+MAX_BUFF	Util.cpp	/^const int MAX_BUFF = 4096;$/;"	v
+METHOD_GET	HttpData.h	/^enum HttpMethod { METHOD_POST = 1, METHOD_GET, METHOD_HEAD};$/;"	e	enum:HttpMethod
+METHOD_HEAD	HttpData.h	/^enum HttpMethod { METHOD_POST = 1, METHOD_GET, METHOD_HEAD};$/;"	e	enum:HttpMethod
+METHOD_POST	HttpData.h	/^enum HttpMethod { METHOD_POST = 1, METHOD_GET, METHOD_HEAD};$/;"	e	enum:HttpMethod
+MimeType	HttpData.h	/^class MimeType {$/;"	c
+MutexLock	base/MutexLock.h	/^		MutexLock() {$/;"	f	class:MutexLock
+MutexLock	base/MutexLock.h	/^class MutexLock : noncopyable {$/;"	c
+MutexLockGuard	base/MutexLock.h	/^		explicit MutexLockGuard(MutexLock &_mutex) : mutex(_mutex) {$/;"	f	class:MutexLockGuard
+MutexLockGuard	base/MutexLock.h	/^class MutexLockGuard : noncopyable {\/\/construct is initialize principle$/;"	c
+PARSE_HEADER_AGAIN	HttpData.h	/^	PARSE_HEADER_AGAIN,$/;"	e	enum:HeaderState
+PARSE_HEADER_ERROR	HttpData.h	/^	PARSE_HEADER_ERROR$/;"	e	enum:HeaderState
+PARSE_HEADER_SUCCESS	HttpData.h	/^	PARSE_HEADER_SUCCESS = 1,$/;"	e	enum:HeaderState
+PARSE_URI_AGAIN	HttpData.h	/^	PARSE_URI_AGAIN = 1,$/;"	e	enum:URIState
+PARSE_URI_ERROR	HttpData.h	/^	PARSE_URI_ERROR,$/;"	e	enum:URIState
+PARSE_URI_SUCCESS	HttpData.h	/^	PARSE_URI_SUCCESS,$/;"	e	enum:URIState
+ParseState	HttpData.h	/^enum ParseState {$/;"	g
+ProcessState	HttpData.h	/^enum ProcessState {$/;"	g
+SPHttpData	Timer.h	/^		std::shared_ptr<HttpData> SPHttpData;$/;"	m	class:TimerNode
+SPTimerNode	Timer.h	/^		typedef std::shared_ptr<TimerNode> SPTimerNode;$/;"	t	class:TimerManager
+SP_Channel	Channel.h	/^typedef std::shared_ptr<Channel> SP_Channel;$/;"	t
+SP_Channel	Epoll.cpp	/^typedef shared_ptr<Channel> SP_Channel;$/;"	t	file:
+STATE_ANALYSIS	HttpData.h	/^	STATE_ANALYSIS,$/;"	e	enum:ProcessState
+STATE_FINISH	HttpData.h	/^	STATE_FINISH$/;"	e	enum:ProcessState
+STATE_PARSE_HEADERS	HttpData.h	/^	STATE_PARSE_HEADERS,$/;"	e	enum:ProcessState
+STATE_PARSE_URI	HttpData.h	/^	STATE_PARSE_URI =1,$/;"	e	enum:ProcessState
+STATE_RECV_BODY	HttpData.h	/^	STATE_RECV_BODY,$/;"	e	enum:ProcessState
+Server	Server.cpp	/^Server::Server(EventLoop *loop, int threadNum, int port)$/;"	f	class:Server
+Server	Server.h	/^class Server {$/;"	c
+Thread	base/Thread.cpp	/^Thread::Thread(const ThreadFunc& func, const string& n)$/;"	f	class:Thread
+Thread	base/Thread.h	/^class Thread : noncopyable {$/;"	c
+ThreadData	base/Thread.cpp	/^	ThreadData(const ThreadFunc& func, const string& name, pid_t* tid,$/;"	f	struct:ThreadData
+ThreadData	base/Thread.cpp	/^struct ThreadData {$/;"	s	file:
+ThreadFunc	base/Thread.cpp	/^	typedef Thread::ThreadFunc ThreadFunc;$/;"	t	struct:ThreadData	file:
+ThreadFunc	base/Thread.h	/^		typedef std::function<void()> ThreadFunc;$/;"	t	class:Thread
+TimerCmp	Timer.h	/^struct TimerCmp {$/;"	s
+TimerManager	Timer.cpp	/^TimerManager::TimerManager() {$/;"	f	class:TimerManager
+TimerManager	Timer.h	/^class TimerManager {$/;"	c
+TimerNode	Timer.cpp	/^TimerNode::TimerNode(TimerNode& tn)$/;"	f	class:TimerNode
+TimerNode	Timer.cpp	/^TimerNode::TimerNode(std::shared_ptr<HttpData> requestData, int timeout)$/;"	f	class:TimerNode
+TimerNode	Timer.h	/^class TimerNode{$/;"	c
+URIState	HttpData.h	/^enum URIState {$/;"	g
+acceptChannel_	Server.h	/^	std::shared_ptr<Channel> acceptChannel_;$/;"	m	class:Server
+add	base/LogStream.h	/^		void add(size_t len){$/;"	f	class:FixedBuffer
+addTimer	Timer.cpp	/^void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout) {$/;"	f	class:TimerManager
+addToPoller	EventLoop.h	/^		void addToPoller(shared_ptr<Channel> channel, int timeout = 0){$/;"	f	class:EventLoop
+add_Timer	Epoll.cpp	/^void Epoll::add_Timer(SP_Channel request_data, int timeout) {$/;"	f	class:Epoll
+analysisRequest	HttpData.cpp	/^AnalysisState HttpData::analysisRequest() {$/;"	f	class:HttpData
+append	base/AsyncLogging.cpp	/^void AsyncLogging::append(const char* logline, int len) {$/;"	f	class:AsyncLogging
+append	base/FileUtil.cpp	/^void AppendFile::append(const char* logline, const size_t len) {$/;"	f	class:AppendFile
+append	base/LogFile.cpp	/^void LogFile::append(const char* logline, int len) {$/;"	f	class:LogFile
+append	base/LogStream.h	/^		void append(const char* buf, size_t len) {$/;"	f	class:FixedBuffer
+append	base/LogStream.h	/^  void append(const char* data, int len) { buffer_.append(data, len); }$/;"	f	class:LogStream
+append_unlocked	base/LogFile.cpp	/^void LogFile::append_unlocked(const char* logline, int len) {$/;"	f	class:LogFile
+assertInLoopThread	EventLoop.h	/^		void assertInLoopThread() {$/;"	f	class:EventLoop
+avail	base/LogStream.h	/^		int avail() const {$/;"	f	class:FixedBuffer
+baseLoop_	EventLoopThreadPool.h	/^		EventLoop* baseLoop_;$/;"	m	class:EventLoopThreadPool
+basename_	base/AsyncLogging.h	/^		string basename_;$/;"	m	class:AsyncLogging
+basename_	base/LogFile.h	/^		const std::string basename_;$/;"	m	class:LogFile
+basename_	base/Logging.h	/^				string basename_;$/;"	m	class:Logger::Impl
+buffer	base/LogStream.h	/^  const Buffer& buffer() const { return buffer_; }$/;"	f	class:LogStream
+buffer_	base/FileUtil.h	/^		char buffer_[64 * 1024];\/\/64k$/;"	m	class:AppendFile
+buffer_	base/LogStream.h	/^  Buffer buffer_;$/;"	m	class:LogStream
+buffers_	base/AsyncLogging.h	/^		BufferVector buffers_;$/;"	m	class:AsyncLogging
+bzero	base/LogStream.h	/^		void bzero() {$/;"	f	class:FixedBuffer
+cacheTid	base/Thread.cpp	/^void CurrentThread::cacheTid(){$/;"	f	class:CurrentThread
+callingPendingFunctors_	EventLoop.h	/^		bool callingPendingFunctors_;$/;"	m	class:EventLoop
+channel_	HttpData.h	/^	std::shared_ptr<Channel> channel_;$/;"	m	class:HttpData
+clearReq	Timer.cpp	/^bool TimerNode::clearReq()$/;"	f	class:TimerNode
+cond	base/Condition.h	/^		pthread_cond_t cond;$/;"	m	class:Condition
+cond_	EventLoopThread.h	/^		Condition cond_;$/;"	m	class:EventLoopThread
+cond_	base/AsyncLogging.h	/^		Condition cond_;$/;"	m	class:AsyncLogging
+condition_	base/CountDownLatch.h	/^		Condition condition_;$/;"	m	class:CountDownLatch
+connHandler_	Channel.h	/^		CallBack connHandler_;$/;"	m	class:Channel
+connectionState_	HttpData.h	/^	ConnectionState connectionState_;$/;"	m	class:HttpData
+convert	base/LogStream.cpp	/^size_t convert(char buf[], T value) {$/;"	f
+countDown	base/CountDownLatch.cpp	/^void CountDownLatch::countDown(){$/;"	f	class:CountDownLatch
+count_	base/CountDownLatch.h	/^		int count_;$/;"	m	class:CountDownLatch
+count_	base/LogFile.h	/^		int count_;$/;"	m	class:LogFile
+createEventfd	EventLoop.cpp	/^int createEventfd() {$/;"	f
+cur_	base/LogStream.h	/^		char* cur_;$/;"	m	class:FixedBuffer
+current	base/LogStream.h	/^		char* current() const {$/;"	f	class:FixedBuffer
+currentBuffer_	base/AsyncLogging.h	/^		BufferPtr currentBuffer_;$/;"	m	class:AsyncLogging
+data	base/LogStream.h	/^		const char* data() const {$/;"	f	class:FixedBuffer
+data_	base/LogStream.h	/^		char data_[SIZE];$/;"	m	class:FixedBuffer
+deleted_	Timer.h	/^		bool deleted_;$/;"	m	class:TimerNode
+digits	base/LogStream.cpp	/^const char digits[] = "9876543210123456789";$/;"	v
+doPendingFunctors	EventLoop.cpp	/^void EventLoop::doPendingFunctors() {$/;"	f	class:EventLoop
+end	base/LogStream.h	/^		const char* end() const{$/;"	f	class:FixedBuffer
+epollFd_	Epoll.h	/^		int epollFd_;$/;"	m	class:Epoll
+epoll_add	Epoll.cpp	/^void Epoll::epoll_add(SP_Channel request, int timeout){$/;"	f	class:Epoll
+epoll_del	Epoll.cpp	/^void Epoll:epoll_del(SP_Channel request) {$/;"	f
+epoll_mod	Epoll.cpp	/^void Epoll::epoll_mod(SP_Channel request, int timeout)$/;"	f	class:Epoll
+errorHandler_	Channel.h	/^		CallBack errorHandler_;$/;"	m	class:Channel
+error_	HttpData.h	/^	bool error_;$/;"	m	class:HttpData
+eventHandling_	EventLoop.h	/^		bool eventHandling_;$/;"	m	class:EventLoop
+eventLoopThreadPool_	Server.h	/^	std::unique_ptr<EventLoopThreadPool> eventLoopThreadPool_;$/;"	m	class:Server
+events_	Channel.h	/^		__uint32_t events_;$/;"	m	class:Channel
+events_	Epoll.h	/^		std::vector<epoll_event> events_;$/;"	m	class:Epoll
+exiting_	EventLoopThread.h	/^		bool exiting_;$/;"	m	class:EventLoopThread
+expiredTime_	Timer.h	/^		size_t expiredTime_;$/;"	m	class:TimerNode
+favicon	HttpData.cpp	/^char favicon[555] = {$/;"	v
+fd2chan_	Epoll.h	/^		SP_Channel fd2chan_[MAXFDS];$/;"	m	class:Epoll
+fd2http_	Epoll.h	/^		std::shared_ptr<HttpData> fd2http_[MAXFDS];$/;"	m	class:Epoll
+fd_	Channel.h	/^		int fd_;$/;"	m	class:Channel
+fd_	HttpData.h	/^	int fd_;$/;"	m	class:HttpData
+fileName_	HttpData.h	/^	std::string fileName_;$/;"	m	class:HttpData
+file_	base/LogFile.h	/^		std::unique_ptr<AppendFile> file_;$/;"	m	class:LogFile
+flush	base/FileUtil.cpp	/^void AppendFile::flush() {$/;"	f	class:AppendFile
+flush	base/LogFile.cpp	/^void LogFile::flush() {$/;"	f	class:LogFile
+flushEveryN_	base/LogFile.h	/^		const int flushEveryN_;$/;"	m	class:LogFile
+flushInterval_	base/AsyncLogging.h	/^		const int flushInterval_;$/;"	m	class:AsyncLogging
+formatInteger	base/LogStream.cpp	/^void LogStream::formatInteger(T v) {$/;"	f	class:LogStream
+formatTime	base/Logging.cpp	/^void Logger::Impl::formatTime()$/;"	f	class:Logger::Impl
+fp_	base/FileUtil.h	/^		FILE *fp_;$/;"	m	class:AppendFile
+func_	base/Thread.cpp	/^	ThreadFunc func_;$/;"	m	struct:ThreadData	file:
+func_	base/Thread.h	/^		ThreadFunc func_;$/;"	m	class:Thread
+get	base/MutexLock.h	/^		pthread_mutex_t* get() {$/;"	f	class:MutexLock
+getChannel	HttpData.h	/^	std::shared_ptr<Channel> getChannel() {return channel_;}$/;"	f	class:HttpData
+getEpollFd	Epoll.h	/^		int getEpollFd() const {$/;"	f	class:Epoll
+getEvents	Channel.h	/^		__uint32_t& getEvents(){$/;"	f	class:Channel
+getEventsRequest	Epoll.cpp	/^std::vector<SP_Channel> Epoll::getEventsRequest(int events_num){$/;"	f	class:Epoll
+getExptime	Timer.h	/^		size_t getExptime() const {$/;"	f	class:TimerNode
+getFd	Channel.cpp	/^int Channel::getFd() {$/;"	f	class:Channel
+getFd	Channel.h	/^		int getFd() const {$/;"	f	class:Channel
+getHolder	Channel.h	/^		std::shared_ptr<HttpData> getHolder() {$/;"	f	class:Channel
+getLastEvents	Channel.h	/^		__uint32_t getLastEvents() const {$/;"	f	class:Channel
+getLogFileName	base/Logging.h	/^		static string getLogFileName() {$/;"	f	class:Logger
+getLoop	HttpData.h	/^	EventLoop* getLoop() {return loop_;}$/;"	f	class:HttpData
+getLoop	Server.h	/^	EventLoop *getLoop() const { return loop_; }$/;"	f	class:Server
+getMime	HttpData.cpp	/^std::string MimeType::getMime(const std::string &suffix)$/;"	f	class:MimeType
+getNextLoop	EventLoopThreadPool.cpp	/^EventLoop* EventLoopThreadPool::getNextLoop() {$/;"	f	class:EventLoopThreadPool
+gettid	base/Thread.cpp	/^pid_t gettid() {$/;"	f
+hState_	HttpData.h	/^	ParseState hState_;$/;"	m	class:HttpData
+handNewConn	Server.cpp	/^void Server::handNewConn() {$/;"	f	class:Server
+handThisConn	Server.h	/^	void handThisConn() { loop_->updatePoller(acceptChannel_); }\/\/?$/;"	f	class:Server
+handleClose	HttpData.cpp	/^void HttpData::handleClose()$/;"	f	class:HttpData
+handleConn	Channel.cpp	/^void Channel::handleConn(){$/;"	f	class:Channel
+handleConn	EventLoop.cpp	/^void EventLoop::handleConn() {$/;"	f	class:EventLoop
+handleConn	HttpData.cpp	/^void HttpData::handleConn() {$/;"	f	class:HttpData
+handleError	HttpData.cpp	/^void HttpData::handleError(int fd, int err_num, string short_msg) {$/;"	f	class:HttpData
+handleEvents	Channel.h	/^		void handleEvents() {$/;"	f	class:Channel
+handleExpired	Epoll.cpp	/^void Epoll::handleExpired() {$/;"	f	class:Epoll
+handleExpiredEvent	Timer.cpp	/^void TimerManager::handleExpiredEvent(){\/\/thread safe is it? $/;"	f	class:TimerManager
+handleRead	Channel.cpp	/^void Channel::handleRead(){$/;"	f	class:Channel
+handleRead	EventLoop.cpp	/^void EventLoop::handleRead() {$/;"	f	class:EventLoop
+handleRead	HttpData.cpp	/^void HttpData::handleRead() {$/;"	f	class:HttpData
+handleWrite	Channel.cpp	/^void Channel::handleWrite(){$/;"	f	class:Channel
+handleWrite	HttpData.cpp	/^void HttpData::handleWrite() {$/;"	f	class:HttpData
+handle_for_sigpipe	Util.cpp	/^void handle_for_sigpipe(){$/;"	f
+headers_	HttpData.h	/^	std::map<std::string, std::string> headers_;$/;"	m	class:HttpData
+holder_	Channel.h	/^		std::weak_ptr<HttpData> holder_;$/;"	m	class:Channel
+impl_	base/Logging.cpp	/^:impl_(fileName, line)$/;"	f
+impl_	base/Logging.h	/^		Impl impl_;$/;"	m	class:Logger
+inBuffer_	HttpData.h	/^	std::string inBuffer_;$/;"	m	class:HttpData
+init	HttpData.cpp	/^void MimeType::init() {$/;"	f	class:MimeType
+isDeleted	Timer.h	/^		bool isDeleted() const {$/;"	f	class:TimerNode
+isInLoopThread	EventLoop.h	/^		bool isInLoopThread() const {$/;"	f	class:EventLoop
+isValid	Timer.cpp	/^bool TimerNode::isValid() {\/\/whether timeout or not$/;"	f	class:TimerNode
+join	base/Thread.cpp	/^int Thread::join(){$/;"	f	class:Thread
+joined_	base/Thread.h	/^		bool joined_;$/;"	m	class:Thread
+kLargeBuffer	base/LogStream.h	/^const int kLargeBuffer = 4000 * 1000;\/\/4mb$/;"	v
+kMaxNumericSize	base/LogStream.h	/^  static const int kMaxNumericSize = 32;$/;"	m	class:LogStream
+kSmallBuffer	base/LogStream.h	/^const int kSmallBuffer = 4000;\/\/4kb$/;"	v
+keepAlive_	HttpData.h	/^	bool keepAlive_;$/;"	m	class:HttpData
+lastEvents_	Channel.h	/^		__uint32_t lastEvents_;$/;"	m	class:Channel
+latch_	base/AsyncLogging.h	/^		CountDownLatch latch_;$/;"	m	class:AsyncLogging
+latch_	base/Thread.cpp	/^	CountDownLatch* latch_;$/;"	m	struct:ThreadData	file:
+latch_	base/Thread.h	/^		CountDownLatch latch_;\/\/?$/;"	m	class:Thread
+length	base/LogStream.h	/^		int length() const {$/;"	f	class:FixedBuffer
+line_	base/Logging.h	/^				int line_;$/;"	m	class:Logger::Impl
+linkTimer	HttpData.h	/^	void linkTimer(std::shared_ptr<TimerNode> mtimer) {$/;"	f	class:HttpData
+listenFd_	Server.h	/^	int listenFd_;$/;"	m	class:Server
+lock	base/MutexLock.h	/^		void lock() {$/;"	f	class:MutexLock
+logFileName_	base/Logging.cpp	/^string Logger::logFileName_ = ".\/WebServer.log";$/;"	m	class:Logger	file:
+logFileName_	base/Logging.h	/^		static string logFileName_;$/;"	m	class:Logger
+loop	EventLoop.cpp	/^void EventLoop::loop() {$/;"	f	class:EventLoop
+loop_	Channel.h	/^		EventLoop * loop_;$/;"	m	class:Channel
+loop_	EventLoopThread.h	/^		EventLoop* loop_;$/;"	m	class:EventLoopThread
+loop_	HttpData.h	/^	EventLoop *loop_;$/;"	m	class:HttpData
+loop_	Server.h	/^	EventLoop *loop_;$/;"	m	class:Server
+looping_	EventLoop.h	/^		bool looping_;$/;"	m	class:EventLoop
+loops_	EventLoopThreadPool.h	/^		std::vector<EventLoop*> loops_;$/;"	m	class:EventLoopThreadPool
+main	base/LoggingTest.cpp	/^int main()$/;"	f
+main	main.cpp	/^int main(int argc, char* argv[]){$/;"	f
+method_	HttpData.h	/^	HttpMethod method_;$/;"	m	class:HttpData
+mime	HttpData.cpp	/^std::unordered_map<std::string, std::string> MimeType::mime;$/;"	m	class:MimeType	file:
+mime	HttpData.h	/^	static std::unordered_map<std::string, std::string> mime;$/;"	m	class:MimeType
+mutex	base/Condition.h	/^		MutexLock &mutex;$/;"	m	class:Condition
+mutex	base/MutexLock.h	/^		MutexLock &mutex;$/;"	m	class:MutexLockGuard
+mutex	base/MutexLock.h	/^		pthread_mutex_t mutex;$/;"	m	class:MutexLock
+mutex_	EventLoop.h	/^		mutable MutexLock mutex_;\/\/?$/;"	m	class:EventLoop
+mutex_	EventLoopThread.h	/^		MutexLock mutex_;$/;"	m	class:EventLoopThread
+mutex_	base/AsyncLogging.h	/^		MutexLock mutex_;$/;"	m	class:AsyncLogging
+mutex_	base/CountDownLatch.h	/^		mutable MutexLock mutex_;\/\/can be modified by const function$/;"	m	class:CountDownLatch
+mutex_	base/LogFile.h	/^		std::unique_ptr<MutexLock> mutex_;$/;"	m	class:LogFile
+name	base/CurrentThread.h	/^	inline const char* name() {$/;"	f	namespace:CurrentThread
+name	base/Thread.h	/^		const std::string& name() const {$/;"	f	class:Thread
+name_	base/Thread.cpp	/^	string name_;$/;"	m	struct:ThreadData	file:
+name_	base/Thread.h	/^		std::string name_;$/;"	m	class:Thread
+newEvent	HttpData.cpp	/^void HttpData::newEvent() {$/;"	f	class:HttpData
+nextBuffer_	base/AsyncLogging.h	/^		BufferPtr nextBuffer_;$/;"	m	class:AsyncLogging
+next_	EventLoopThreadPool.h	/^		int next_;$/;"	m	class:EventLoopThreadPool
+noncopyable	base/noncopyable.h	/^		noncopyable() {$/;"	f	class:noncopyable
+noncopyable	base/noncopyable.h	/^class noncopyable {$/;"	c
+notify	base/Condition.h	/^		void notify() {$/;"	f	class:Condition
+notifyAll	base/Condition.h	/^		void notifyAll() {$/;"	f	class:Condition
+nowReadPos_	HttpData.h	/^	int nowReadPos_;$/;"	m	class:HttpData
+numThreads_	EventLoopThreadPool.h	/^		int numThreads_;$/;"	m	class:EventLoopThreadPool
+once_control_	base/Logging.cpp	/^static pthread_once_t once_control_ = PTHREAD_ONCE_INIT;$/;"	v	file:
+once_init	base/Logging.cpp	/^void once_init(){$/;"	f
+onec_control	HttpData.h	/^	static pthread_once_t onec_control;$/;"	m	class:MimeType
+operator ()	Timer.h	/^	bool operator()(std::shared_ptr<TimerNode> &a,$/;"	f	struct:TimerCmp
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(double v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(int v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(long double v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(long long v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(long v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(short v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(unsigned int v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(unsigned long long v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(unsigned long v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.cpp	/^LogStream& LogStream::operator<<(unsigned short v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.h	/^  LogStream& operator<<(bool v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.h	/^  LogStream& operator<<(char v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.h	/^  LogStream& operator<<(const char* str) {$/;"	f	class:LogStream
+operator <<	base/LogStream.h	/^  LogStream& operator<<(const std::string& v) {$/;"	f	class:LogStream
+operator <<	base/LogStream.h	/^  LogStream& operator<<(const unsigned char* str) {$/;"	f	class:LogStream
+operator <<	base/LogStream.h	/^  LogStream& operator<<(float v) {$/;"	f	class:LogStream
+other	base/LoggingTest.cpp	/^void other()$/;"	f
+outBuffer_	HttpData.h	/^	std::string outBuffer_;$/;"	m	class:HttpData
+output	base/Logging.cpp	/^void output(const char* msg, int len)$/;"	f
+parseHeaders	HttpData.cpp	/^HeaderState HttpData::parseHeaders() {$/;"	f	class:HttpData
+parseURI	HttpData.cpp	/^URIState HttpData::parseURI() {$/;"	f	class:HttpData
+path_	HttpData.h	/^	std::string path_;$/;"	m	class:HttpData
+pendingFunctors_	EventLoop.h	/^		std::vector<Functor> pendingFunctors_;\/\/?$/;"	m	class:EventLoop
+poll	Epoll.cpp	/^std::vector<SP_Channel> Epoll::poll() {$/;"	f	class:Epoll
+poller_	EventLoop.h	/^		shared_ptr<Epoll> poller_;$/;"	m	class:EventLoop
+port_	Server.h	/^	int port_;$/;"	m	class:Server
+pthreadId_	base/Thread.h	/^		pthread_t pthreadId_;$/;"	m	class:Thread
+pwakeupChannel_	EventLoop.h	/^		shared_ptr<Channel> pwakeupChannel_;$/;"	m	class:EventLoop
+queueInLoop	EventLoop.cpp	/^void EventLoop::queueInLoop(Functor&& cb){$/;"	f	class:EventLoop
+quit	EventLoop.cpp	/^void EventLoop::quit(){$/;"	f	class:EventLoop
+quit_	EventLoop.h	/^		bool quit_;$/;"	m	class:EventLoop
+readHandler_	Channel.h	/^		CallBack readHandler_;$/;"	m	class:Channel
+readn	Util.cpp	/^ssize_t readn(int fd, std::string& inBuffer)\/\/nonblocking above$/;"	f
+readn	Util.cpp	/^ssize_t readn(int fd, std::string& inBuffer, bool &zero)$/;"	f
+readn	Util.cpp	/^ssize_t readn(int fd, void* buff, size_t n){\/\/li jie!!$/;"	f
+removeFromPoller	EventLoop.h	/^		void removeFromPoller(shared_ptr<Channel> channel) {$/;"	f	class:EventLoop
+reset	HttpData.cpp	/^void HttpData::reset() {$/;"	f	class:HttpData
+reset	base/LogStream.h	/^		void reset() {$/;"	f	class:FixedBuffer
+resetBuffer	base/LogStream.h	/^  void resetBuffer() { buffer_.reset(); }$/;"	f	class:LogStream
+revents_	Channel.h	/^		__uint32_t revents_;$/;"	m	class:Channel
+runInLoop	EventLoop.cpp	/^void EventLoop::runInLoop(Functor&& cb){$/;"	f	class:EventLoop
+runInThread	base/Thread.cpp	/^	void runInThread() {$/;"	f	struct:ThreadData
+running_	base/AsyncLogging.h	/^		bool running_;$/;"	m	class:AsyncLogging
+separateTimer	HttpData.cpp	/^void HttpData::separateTimer()$/;"	f	class:HttpData
+setConnHandler	Channel.h	/^		void setConnHandler(CallBack &&connHandler) {$/;"	f	class:Channel
+setDefaultName	base/Thread.cpp	/^void Thread::setDefaultName(){$/;"	f	class:Thread
+setDeleted	Timer.h	/^		void setDeleted() {$/;"	f	class:TimerNode
+setErrorHandler	Channel.h	/^		void setErrorHandler(CallBack &&errorHandler) {$/;"	f	class:Channel
+setEvents	Channel.h	/^		void setEvents(__uint32_t ev) {$/;"	f	class:Channel
+setFd	Channel.cpp	/^void Channel::setFd(int fd){$/;"	f	class:Channel
+setHolder	Channel.h	/^		void setHolder(std::shared_ptr<HttpData> holder) {$/;"	f	class:Channel
+setLogFileName	base/Logging.h	/^		static void setLogFileName(string& fileName){$/;"	f	class:Logger
+setReadHandler	Channel.h	/^		void setReadHandler(CallBack &&readHandler) {$/;"	f	class:Channel
+setRevents	Channel.h	/^		void setRevents(__int32_t ev) {$/;"	f	class:Channel
+setSocketNodelay	Util.cpp	/^void setSocketNodelay(int fd){$/;"	f
+setSocketNonBlocking	Util.cpp	/^int setSocketNonBlocking(int fd){$/;"	f
+setWriteHandler	Channel.h	/^		void setWriteHandler(CallBack &&writeHandler) {$/;"	f	class:Channel
+shutDownWR	Util.cpp	/^void shutDownWR(int fd){$/;"	f
+shutdown	EventLoop.h	/^		void shutdown(shared_ptr<Channel> channel) {$/;"	f	class:EventLoop
+socket_bind_listen	Util.cpp	/^int socket_bind_listen(int port){$/;"	f
+start	EventLoopThreadPool.cpp	/^void EventLoopThreadPool::start() {$/;"	f	class:EventLoopThreadPool
+start	Server.cpp	/^void Server::start() {$/;"	f	class:Server
+start	base/AsyncLogging.h	/^		void start() {$/;"	f	class:AsyncLogging
+start	base/Thread.cpp	/^void Thread::start() {$/;"	f	class:Thread
+startLoop	EventLoopThread.cpp	/^EventLoop* EventLoopThread::startLoop() {$/;"	f	class:EventLoopThread
+startThread	base/Thread.cpp	/^void* startThread(void* obj) {$/;"	f
+started	base/Thread.h	/^		bool started() const {$/;"	f	class:Thread
+started_	EventLoopThreadPool.h	/^		bool started_;$/;"	m	class:EventLoopThreadPool
+started_	Server.h	/^	bool started_;$/;"	m	class:Server
+started_	base/Thread.h	/^		bool started_;$/;"	m	class:Thread
+state_	HttpData.h	/^	ProcessState state_;$/;"	m	class:HttpData
+stop	base/AsyncLogging.h	/^		void stop() {$/;"	f	class:AsyncLogging
+stream	base/Logging.h	/^		LogStream& stream() {$/;"	f	class:Logger
+stream_	base/Logging.h	/^				LogStream stream_;$/;"	m	class:Logger::Impl
+stressing_multi_threads	base/LoggingTest.cpp	/^void stressing_multi_threads(int threadNum = 4)$/;"	f
+stressing_single_thread	base/LoggingTest.cpp	/^void stressing_single_thread()$/;"	f
+t_cachedTid	base/Thread.cpp	/^	__thread int t_cachedTid = 0;\/\/one thread one copy __thread$/;"	m	namespace:CurrentThread	file:
+t_threadName	base/Thread.cpp	/^	__thread const char* t_threadName = "default";$/;"	m	namespace:CurrentThread	file:
+t_tidString	base/Thread.cpp	/^	__thread char t_tidString[32];$/;"	m	namespace:CurrentThread	file:
+t_tidStringLength	base/Thread.cpp	/^	__thread int t_tidStringLength = 6;$/;"	m	namespace:CurrentThread	file:
+threadFunc	EventLoopThread.cpp	/^void EventLoopThread::threadFunc() {$/;"	f	class:EventLoopThread
+threadFunc	base/AsyncLogging.cpp	/^void AsyncLogging::threadFunc() {$/;"	f	class:AsyncLogging
+threadFunc	base/LoggingTest.cpp	/^void threadFunc()$/;"	f
+threadId_	EventLoop.h	/^		const pid_t threadId_;$/;"	m	class:EventLoop
+threadNum_	Server.h	/^	int threadNum_;$/;"	m	class:Server
+thread_	EventLoopThread.h	/^		Thread thread_;$/;"	m	class:EventLoopThread
+thread_	base/AsyncLogging.h	/^		Thread thread_;$/;"	m	class:AsyncLogging
+threads_	EventLoopThreadPool.h	/^		std::vector<std::shared_ptr<EventLoopThread>> threads_;$/;"	m	class:EventLoopThreadPool
+tid	base/CurrentThread.h	/^	inline int tid(){$/;"	f	namespace:CurrentThread
+tid	base/Thread.h	/^		pid_t tid() const {$/;"	f	class:Thread
+tidString	base/CurrentThread.h	/^	inline const char* tidString(){\/\/for logging$/;"	f	namespace:CurrentThread
+tidStringLength	base/CurrentThread.h	/^	inline int tidStringLength(){$/;"	f	namespace:CurrentThread
+tid_	base/Thread.cpp	/^	pid_t* tid_;$/;"	m	struct:ThreadData	file:
+tid_	base/Thread.h	/^		pid_t tid_;$/;"	m	class:Thread
+timerManager_	Epoll.h	/^		TimerManager timerManager_;$/;"	m	class:Epoll
+timerNodeQueue	Timer.h	/^			timerNodeQueue;$/;"	m	class:TimerManager
+timer_	HttpData.h	/^	std::weak_ptr<TimerNode> timer_;$/;"	m	class:HttpData
+type_test	base/LoggingTest.cpp	/^void type_test()$/;"	f
+unlock	base/MutexLock.h	/^		void unlock() {$/;"	f	class:MutexLock
+update	Timer.cpp	/^void TimerNode::update(int timeout) {\/\/reset timeout time$/;"	f	class:TimerNode
+updatePoller	EventLoop.h	/^		void updatePoller(shared_ptr<Channel> channel, int timeout = 0){$/;"	f	class:EventLoop
+wait	base/Condition.h	/^		void wait() {$/;"	f	class:Condition
+wait	base/CountDownLatch.cpp	/^void CountDownLatch::wait(){$/;"	f	class:CountDownLatch
+waitForSeconds	base/Condition.h	/^		bool waitForSeconds(int seconds){$/;"	f	class:Condition
+wakeup	EventLoop.cpp	/^void EventLoop::wakeup() {$/;"	f	class:EventLoop
+wakeupFd_	EventLoop.h	/^		int wakeupFd_;$/;"	m	class:EventLoop
+write	base/FileUtil.cpp	/^size_t AppendFile::write(const char* logline, size_t len) {$/;"	f	class:AppendFile
+writeHandler_	Channel.h	/^		CallBack writeHandler_;$/;"	m	class:Channel
+writen	Util.cpp	/^ssize_t writen(int fd, std::string& sbuff) {$/;"	f
+writen	Util.cpp	/^ssize_t writen(int fd, void *buff, size_t n)\/\/nonblocking$/;"	f
+zero	base/LogStream.cpp	/^const char* zero = digits + 9;$/;"	v
+~AppendFile	base/FileUtil.cpp	/^AppendFile::~AppendFile(){$/;"	f	class:AppendFile
+~AsyncLogging	base/AsyncLogging.h	/^		~AsyncLogging() {$/;"	f	class:AsyncLogging
+~Channel	Channel.cpp	/^Channel::~Channel() {$/;"	f	class:Channel
+~Condition	base/Condition.h	/^		~Condition() {$/;"	f	class:Condition
+~Epoll	Epoll.cpp	/^Epoll::~Epoll(){$/;"	f	class:Epoll
+~EventLoop	EventLoop.cpp	/^EventLoop::~EventLoop() {$/;"	f	class:EventLoop
+~EventLoopThread	EventLoopThread.cpp	/^EventLoopThread::~EventLoopThread() {$/;"	f	class:EventLoopThread
+~EventLoopThreadPool	EventLoopThreadPool.h	/^		~EventLoopThreadPool() {$/;"	f	class:EventLoopThreadPool
+~FixedBuffer	base/LogStream.h	/^		~FixedBuffer(){$/;"	f	class:FixedBuffer
+~HttpData	HttpData.h	/^	~HttpData() { close(fd_); }$/;"	f	class:HttpData
+~LogFile	base/LogFile.cpp	/^LogFile::~LogFile(){$/;"	f	class:LogFile
+~Logger	base/Logging.cpp	/^Logger::~Logger()$/;"	f	class:Logger
+~MutexLock	base/MutexLock.h	/^		~MutexLock() {$/;"	f	class:MutexLock
+~MutexLockGuard	base/MutexLock.h	/^		~MutexLockGuard() {$/;"	f	class:MutexLockGuard
+~Thread	base/Thread.cpp	/^Thread::~Thread() {$/;"	f	class:Thread
+~TimerManager	Timer.cpp	/^TimerManager::~TimerManager() {$/;"	f	class:TimerManager
+~TimerNode	Timer.cpp	/^TimerNode::~TimerNode() {$/;"	f	class:TimerNode
+~noncopyable	base/noncopyable.h	/^		~noncopyable() {$/;"	f	class:noncopyable

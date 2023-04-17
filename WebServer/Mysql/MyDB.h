@@ -2,12 +2,12 @@
 	> File Name: MyDB.h
 	> Author: qinyu
 	> Mail: qinyu.LT@gmail.com 
-	> Created Time: 2016年04月19日 星期二 22时57分10秒
+	> Created Time: 2023年04月17日 星期一 15时02分26秒
  ************************************************************************/
 #ifndef _MYDB_H
 #define _MYDB_H
 
-#include "../public.h"
+//#include "../public.h"
 #include "/usr/include/mysql/mysql.h"
 
 class MyDB

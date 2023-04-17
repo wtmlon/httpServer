@@ -19,6 +19,11 @@ build:
 	g++ -std=c++11 -g -Wall -O3 -D_PTHREADS   -c -o Main.o main.cpp
 	#g++ -std=c++11 -g -Wall -O3 -D_PTHREADS   -c -o base/tests/LoggingTest.o base/tests/LoggingTest.cpp
 	#g++ -std=c++11 -g -Wall -O3 -D_PTHREADS   -c -o tests/HTTPClient.o tests/HTTPClient.cpp
+Mysql:
+	g++ -std=c++11 -g -Wall -O3 -c -o Mysql/MyDB.o Mysql/MyDB.cpp
+	g++ -std=c++11 -g -Wall -O3 -c -o Mysql/sqlConnPool.o Mysql/sqlConnPool.cpp
+.PHONY: Mysql
+
 WebServer :
 	#g++ -std=c++11 -g -Wall -O3 -D_PTHREADS -o WebServer Server.o Timer.o ThreadPool.o Epoll.o Channel.o EventLoopThread.o EventLoopThreadPool.o HttpData.o Util.o EventLoop.o base/CountDownLatch.o base/LogStream.o base/LogFile.o base/Thread.o base/Logging.o base/AsyncLogging.o base/FileUtil.o Main.o  -lpthread
 	g++ -std=c++11 -g -Wall -O3 -D_PTHREADS -o WebServer Server.o Timer.o Epoll.o Channel.o EventLoopThread.o EventLoopThreadPool.o HttpData.o Util.o EventLoop.o base/CountDownLatch.o base/LogStream.o base/LogFile.o base/Thread.o base/Logging.o base/AsyncLogging.o base/FileUtil.o Main.o  -lpthread

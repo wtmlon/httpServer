@@ -1,8 +1,8 @@
 /*************************************************************************
 	> File Name: sqlConnPool.cpp
-	> Author: qinyu
-	> Mail: qinyu.LT@gmail.com 
-	> Created Time: 2016年04月23日 星期六 15时02分26秒
+	> Author: wtmlon
+	> Mail: wtmlon@foxmail.com 
+	> Created Time: 2023年04月17日 星期一 15时02分26秒
  ************************************************************************/
 #include "sql_conn_pool.h"
 #include <stdexcept>
@@ -175,7 +175,6 @@ bool CSqlConnPool::IsValidConnection(sql::Connection *conn)
 	return ret;
 }
 
-/*
 int main()
 {
     const SqlConnInfo conInfo={10,"127.0.0.1","3306","root","qinyu"};
@@ -213,5 +212,5 @@ int main()
     delete conn;
 
     return 0;
-}*/
+}
 

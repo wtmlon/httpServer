@@ -112,7 +112,7 @@ bool HttpData::process(const std::string & url)
 {
     if(url == "test.do")
     {
-        inform(fd_, 200, "test.do");
+        inform(fd_, 200, "OK");
         return true;
     }
     else
@@ -590,7 +590,7 @@ AnalysisState HttpData::analysisRequest() {
 
 void HttpData::inform(int fd, int err_num, string short_msg) {
   short_msg = " " + short_msg;
-  char send_buff[4096];
+  //char send_buff[4096];
   string body_buff, header_buff;
   body_buff += "<html><title>test page!</title>";
   body_buff += "<body bgcolor=\"0fffff\">";
@@ -606,13 +606,12 @@ void HttpData::inform(int fd, int err_num, string short_msg) {
   header_buff += "\r\n";
 
   LOG <<"inside xxxxxxxxxxx";
-  sprintf(send_buff, "%s", header_buff.c_str());
-  writen(fd, send_buff, strlen(send_buff));
-  sprintf(send_buff, "%s", body_buff.c_str());
+  //sprintf(send_buff, "%s", header_buff.c_str());
+  //writen(fd, send_buff, strlen(send_buff));
+  //sprintf(send_buff, "%s", body_buff.c_str());
   //std::cout<<"THRER !!!!"<<send_buff<<std::endl;
-  writen(fd, send_buff, strlen(send_buff));
-
-
+  //writen(fd, send_buff, strlen(send_buff));
+  outBuffer_ += header_buff + body_buff;
 }
 void HttpData::handleError(int fd, int err_num, string short_msg) {
   short_msg = " " + short_msg;

@@ -210,7 +210,7 @@ int socket_bind_listen(int port){
         
     }
 	int optval = 1;
-	if(setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &optval,
+    if(setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &optval,
 				sizeof(optval)) == -1){
         perror("socket reuse fail");
 		close(listen_fd);

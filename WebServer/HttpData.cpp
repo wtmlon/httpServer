@@ -108,6 +108,18 @@ std::string MimeType::getMime(const std::string &suffix)
 		return mime[suffix];
 }
 
+bool HttpData::process(const std::string & url)
+{
+    if(url == "test.do")
+    {
+        inform(fd_, 200, "test.do");
+        return true;
+    }
+    else
+        return false;
+    return true;
+}
+
 HttpData::HttpData(EventLoop* loop, int connfd)
 	:loop_(loop),
 	channel_(new Channel(loop, connfd)),
@@ -254,6 +266,7 @@ void HttpData::handleRead() {
             events_ |= EPOLLOUT;
         }
 		if(!error_ && state_ == STATE_FINISH) {
+            LOG << "STATE_FINISH";
 			this->reset();
 			if(inBuffer_.size() > 0){
 				if(connectionState_ != H_DISCONNECTING) handleRead();
@@ -523,6 +536,17 @@ AnalysisState HttpData::analysisRequest() {
 
 	return ANALYSIS_SUCCESS;
     }
+
+    //处理.do结尾的api
+    if(dot_pos >=0 && fileName_.substr(dot_pos) == ".do")
+    {
+        if(!this->process(fileName_))
+        {
+		    LOG<<"handle request: "<< fileName_ << "fail";
+        }
+        return ANALYSIS_SUCCESS;
+    }
+
     struct stat sbuf;
     if(stat(fileName_.c_str(), &sbuf) < 0) {
     	header.clear();
@@ -564,6 +588,32 @@ AnalysisState HttpData::analysisRequest() {
     return ANALYSIS_ERROR;  
 }
 
+void HttpData::inform(int fd, int err_num, string short_msg) {
+  short_msg = " " + short_msg;
+  char send_buff[4096];
+  string body_buff, header_buff;
+  body_buff += "<html><title>test page!</title>";
+  body_buff += "<body bgcolor=\"0fffff\">";
+  body_buff += to_string(err_num) + short_msg;
+  body_buff += "<hr><em> WTMLON's Web Server</em>\n</body></html>";
+
+  header_buff += "HTTP/1.1 " + to_string(err_num) + short_msg + "\r\n";
+  header_buff += "Content-Type: text/html\r\n";
+  header_buff += "Connection: Close\r\n";
+  header_buff += "Content-Length: " + to_string(body_buff.size()) + "\r\n";
+  header_buff += "Server: WTMLON's Web Server\r\n";
+
+  header_buff += "\r\n";
+
+  LOG <<"inside xxxxxxxxxxx";
+  sprintf(send_buff, "%s", header_buff.c_str());
+  writen(fd, send_buff, strlen(send_buff));
+  sprintf(send_buff, "%s", body_buff.c_str());
+  //std::cout<<"THRER !!!!"<<send_buff<<std::endl;
+  writen(fd, send_buff, strlen(send_buff));
+
+
+}
 void HttpData::handleError(int fd, int err_num, string short_msg) {
   short_msg = " " + short_msg;
   char send_buff[4096];

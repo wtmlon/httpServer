@@ -1,5 +1,5 @@
 *.o
 *.swp
-core*
+*core*
 *.bak
 *.log

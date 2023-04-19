@@ -4,7 +4,7 @@
 	> Mail: wtmlon@foxmail.com 
 	> Created Time: 2023年04月17日 星期一 15时02分26秒
  ************************************************************************/
-#include "sql_conn_pool.h"
+#include "sqlConnPool.h"
 #include <stdexcept>
 #include <cppconn/config.h>
 #include <cppconn/connection.h>
@@ -175,7 +175,7 @@ bool CSqlConnPool::IsValidConnection(sql::Connection *conn)
 	return ret;
 }
 
-int main()
+/*int main()
 {
     const SqlConnInfo conInfo={10,"127.0.0.1","3306","root","qinyu"};
 
@@ -213,4 +213,4 @@ int main()
 
     return 0;
 }
-
+*/

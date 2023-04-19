@@ -103,7 +103,8 @@ private:
 	void handleConn();
 	void handleError(int fd, int err_num, std::string short_msg);
 	void inform(int fd, int err_num, std::string short_msg);
-    bool process(const std::string & url);
+	void registry();
+	bool process(const std::string & url);
 	URIState parseURI();
 	HeaderState parseHeaders();
 	AnalysisState analysisRequest();

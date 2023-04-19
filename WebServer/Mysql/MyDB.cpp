@@ -1,12 +1,15 @@
 /*************************************************************************
 	> File Name: MyDB.cpp
-	> Author: qinyu
-	> Mail: qinyu.LT@gmail.com 
-	> Created Time: 2016年04月19日 星期二 22时57分44秒
+	> Author: wtmlon
+	> Mail: wtmlon@foxmail.com 
+	> Created Time: 2023年04月19日 星期二 22时57分44秒
  ************************************************************************/
 
 #include "MyDB.h"
 #include <iostream>
+#include <string>
+#include <list>
+
 using namespace std;
 
 MyDB::MyDB()
@@ -26,7 +29,7 @@ MyDB::~MyDB()
     }
 }
 
-bool MyDB::initDB(string host,string user,string password,string db_name)
+bool MyDB::initDB(std::string host,std::string user,std::string password,std::string db_name)
 {
     connection = mysql_real_connect(connection,host.c_str(),user.c_str(),password.c_str(),db_name.c_str(),0,NULL,0);
     if(connection == NULL)
@@ -38,7 +41,7 @@ bool MyDB::initDB(string host,string user,string password,string db_name)
     return true;
 }
 
-bool MyDB::execSQL(string sql)
+bool MyDB::execSQL(std::string sql)
 {
     int i,j;
     if(mysql_query(connection,sql.c_str()))
@@ -77,7 +80,7 @@ bool MyDB::execSQL(string sql)
     return true;
 }
 
-list<string> MyDB::getResult()
+std::list<std::string> MyDB::getResult()
 {
     return res;
 }
@@ -86,7 +89,7 @@ void MyDB::showResult()
 {
     cout<<"showResult():";
     cout<<res.size()<<endl;
-    list<string>::iterator it;
+    std::list<std::string>::iterator it;
     for(it=res.begin();it != res.end();++it)
     {
         cout<<*it<<endl;

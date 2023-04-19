@@ -2,11 +2,13 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
+#include <unordered_map>
 #include <iostream>
 #include "Channel.h"
 #include "EventLoop.h"
 #include "Util.h"
 #include "time.h"
+#include "Mysql/model.h"
 
 using namespace std;
 
@@ -16,6 +18,8 @@ std::unordered_map<std::string, std::string> MimeType::mime;
 const __uint32_t DEFAULT_EVENT = EPOLLIN | EPOLLET | EPOLLONESHOT;
 const int DEFAULT_EXPIRED_TIME = 2000;
 const int DEFAULT_KEEP_ALIVE_TIME = 5*60*1000;
+
+//bool http_model::add_user(const string& username, const string& password);
 
 char favicon[555] = {
     '\x89', 'P',    'N',    'G',    '\xD',  '\xA',  '\x1A', '\xA',  '\x0',
@@ -114,6 +118,10 @@ bool HttpData::process(const std::string & url)
     {
         inform(fd_, 200, "OK");
         return true;
+    }
+    else if(url == "registry.do")
+    {
+	registry();
     }
     else
         return false;
@@ -586,6 +594,54 @@ AnalysisState HttpData::analysisRequest() {
 
   }
     return ANALYSIS_ERROR;  
+}
+
+void HttpData::registry() {
+  //unordered_map<string, string> body = decode(inBuffer_);
+  unordered_map<string, string> body{{"username", "wtmlonman"}, {"password", "12345"}};
+  if(body.find("username") == body.end())
+  {
+	error_ = true;
+	handleError(fd_, 400, "Bad Request");
+	return;
+  }
+
+  if(body.find("password") == body.end())
+  {
+	error_ = true;
+	handleError(fd_, 400, "Bad Request");
+	return;
+  }
+
+  if (http_model::add_user(body["username"], body["password"]))
+  {
+	  int err_num = 200;
+	  string short_msg = "OK";
+	  string body_buff, header_buff;
+	  body_buff += "<html><title>add user success!</title>";
+	  body_buff += "<body bgcolor=\"0fffff\">";
+	  body_buff += to_string(err_num) + short_msg;
+	  body_buff += "<hr><em> WTMLON's Web Server</em>\n</body></html>";
+
+	  header_buff += "HTTP/1.1 " + to_string(err_num) + short_msg + "\r\n";
+	  header_buff += "Content-Type: text/html\r\n";
+	  header_buff += "Connection: Close\r\n";
+	  header_buff += "Content-Length: " + to_string(body_buff.size()) + "\r\n";
+	  header_buff += "Server: WTMLON's Web Server\r\n";
+
+	  header_buff += "\r\n";
+
+	  //sprintf(send_buff, "%s", header_buff.c_str());
+	  //writen(fd, send_buff, strlen(send_buff));
+	  //sprintf(send_buff, "%s", body_buff.c_str());
+	  //std::cout<<"THRER !!!!"<<send_buff<<std::endl;
+	  //writen(fd, send_buff, strlen(send_buff));
+	  outBuffer_ += header_buff + body_buff;
+  }
+  else{
+	  error_ = true;
+	  handleError(fd_, 400, "Bad Request");
+  }
 }
 
 void HttpData::inform(int fd, int err_num, string short_msg) {

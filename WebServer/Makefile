@@ -20,13 +20,19 @@ build:
 	#g++ -std=c++11 -g -Wall -O3 -D_PTHREADS   -c -o base/tests/LoggingTest.o base/tests/LoggingTest.cpp
 	#g++ -std=c++11 -g -Wall -O3 -D_PTHREADS   -c -o tests/HTTPClient.o tests/HTTPClient.cpp
 Mysql:
-	g++ -std=c++11 -g -Wall -O3 -c -o Mysql/MyDB.o Mysql/MyDB.cpp
-	g++ -std=c++11 -g -Wall -O3 -c -o Mysql/sqlConnPool.o Mysql/sqlConnPool.cpp
+	#g++ -std=c++11 -g -Wall -O3 -c -o Mysql/MyDB.o Mysql/MyDB.cpp
+	#g++ -std=c++11 -g -Wall -O3 -c -o Mysql/sqlConnPool.o Mysql/sqlConnPool.cpp
+	g++ -std=c++11 -g -Wall -O3 -c -o Mysql/sqlConnPool.o Mysql/sqlConnPool.cpp -lboost_system  -lmysqlcppconn
+	g++ -std=c++11 -g -Wall -O3 -c -o Mysql/model.o  Mysql/model.cpp
 .PHONY: Mysql
+
+Mysql-singleton:
+	g++ -std=c++11 -g -Wall -O3 -c -o Mysql/test_singleton.o  Mysql/test_singleton.cpp
+	g++ -std=c++11 -g -Wall -O3 -o Mysql/test_singleton Mysql/test_singleton.o Mysql/sqlConnPool.o -lboost_system  -lmysqlcppconn
 
 WebServer :
 	#g++ -std=c++11 -g -Wall -O3 -D_PTHREADS -o WebServer Server.o Timer.o ThreadPool.o Epoll.o Channel.o EventLoopThread.o EventLoopThreadPool.o HttpData.o Util.o EventLoop.o base/CountDownLatch.o base/LogStream.o base/LogFile.o base/Thread.o base/Logging.o base/AsyncLogging.o base/FileUtil.o Main.o  -lpthread
-	g++ -std=c++11 -g -Wall -O3 -D_PTHREADS -o WebServer Server.o Timer.o Epoll.o Channel.o EventLoopThread.o EventLoopThreadPool.o HttpData.o Util.o EventLoop.o base/CountDownLatch.o base/LogStream.o base/LogFile.o base/Thread.o base/Logging.o base/AsyncLogging.o base/FileUtil.o Main.o  -lpthread
+	g++ -std=c++11 -g -Wall -O3 -D_PTHREADS -o WebServer Server.o Timer.o Epoll.o Channel.o EventLoopThread.o EventLoopThreadPool.o HttpData.o Util.o EventLoop.o base/CountDownLatch.o base/LogStream.o base/LogFile.o base/Thread.o base/Logging.o base/AsyncLogging.o base/FileUtil.o Mysql/sqlConnPool.o Mysql/model.o Main.o  -lpthread -lboost_system  -lmysqlcppconn
 
 
 LoggingTest :
@@ -38,5 +44,5 @@ HTTPClient :
 	g++ -std=c++11 -g -Wall -O3 -D_PTHREADS -o HTTPClient Server.o Timer.o Epoll.o Channel.o EventLoopThread.o EventLoopThreadPool.o HttpData.o Util.o EventLoop.o base/CountDownLatch.o base/LogStream.o base/LogFile.o base/Thread.o base/Logging.o base/AsyncLogging.o base/FileUtil.o tests/HTTPClient.o  -lpthread
 	#g++ -std=c++11 -g -Wall -O3 -D_PTHREADS -o HTTPClient Server.o Timer.o ThreadPool.o Epoll.o Channel.o EventLoopThread.o EventLoopThreadPool.o HttpData.o Util.o EventLoop.o base/CountDownLatch.o base/LogStream.o base/LogFile.o base/Thread.o base/Logging.o base/AsyncLogging.o base/FileUtil.o tests/HTTPClient.o  -lpthread
 
-all: build WebServer
+all: build Mysql WebServer
 .PHONY: WebServer

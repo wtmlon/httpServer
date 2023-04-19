@@ -31,6 +31,10 @@ typedef struct sqlConnInfo_
 class CSqlConnPool
 {
 public:
+	static CSqlConnPool* getInstance() {
+		static CSqlConnPool instance;
+		return &instance;
+	}
 	CSqlConnPool();
 	~CSqlConnPool();
 
